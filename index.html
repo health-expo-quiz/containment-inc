@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contain the outbreak of a deadly pathogen in this strategic simulation game inspired by Plague Inc.">
+    <title>Containment Inc. - A Pandemic Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            color: #fff;
+            overflow: hidden;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #ffd700;
+        }
+        #intro {
+            text-align: center;
+            padding: 20px;
+        }
+        #intro p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 180px);
+        }
+        canvas {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background: #ff5733;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #c70039;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #bbb;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Containment Inc.</h1>
+        <p>A Simulation of Hope and Strategy</p>
+    </header>
+
+    <div id="intro">
+        <p>
+            <strong>Year 2050.</strong> A mysterious and highly contagious pathogen emerges from the thawing permafrost in Siberia.
+            This virus, reminiscent of the Black Death, spreads rapidly. Panic ensues, and the world turns to Dr. Aria Chen,
+            a renowned epidemiologist, to lead the charge against this crisis.
+        </p>
+        <p>
+            Your mission: Contain the outbreak, develop a vaccine, and manage the social and political upheaval that threatens humanity's survival.
+        </p>
+        <div class="button-container">
+            <button id="start-game">Begin Your Mission</button>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+    </div>
+
+    <script>
+        // Canvas Setup
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawBackground() {
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#003973');
+            gradient.addColorStop(1, '#E5E5BE');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawTitle() {
+            ctx.font = '36px Arial';
+            ctx.fillStyle = '#FFD700';
+            ctx.textAlign = 'center';
+            ctx.fillText('Containment Inc.', canvas.width / 2, 80);
+            ctx.font = '20px Arial';
+            ctx.fillStyle = '#fff';
+            ctx.fillText('Lead the fight against the next global pandemic.', canvas.width / 2, 120);
+        }
+
+        function drawStartMessage() {
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#ff5733';
+            ctx.fillText('Click \"Begin Your Mission\" to start!', canvas.width / 2, canvas.height / 2);
+        }
+
+        function initializeGame() {
+            drawBackground();
+            drawTitle();
+            drawStartMessage();
+        }
+
+        initializeGame();
+
+        document.getElementById('start-game').addEventListener('click', () => {
+            alert('Game Starting! More functionality will be added here.');
+        });
+    </script>
+</body>
+</html>
