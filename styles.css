@@ -1,0 +1,190 @@
+/* styles.css - Containment Inc. */
+
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #002b36;
+    color: #ffffff;
+}
+
+/* Game Container */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Description */
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #b3b3b3;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(to right, #006400, #00b300);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(to right, #00b300, #00e600);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Game Canvas */
+canvas {
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    background: url('images/world-map.png') no-repeat center center;
+    background-size: cover;
+    width: 800px;
+    height: 500px;
+}
+
+/* Placeholder Images */
+#gameCanvas::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('images/virus-icon.png') no-repeat center;
+    background-size: 10%;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Event Log */
+#event-log {
+    width: 800px;
+    background: #001f26;
+    border: 1px solid #006064;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    overflow-y: auto;
+    max-height: 150px;
+    margin-top: 10px;
+}
+
+/* Event Log Scrollbar */
+#event-log::-webkit-scrollbar {
+    width: 8px;
+}
+
+#event-log::-webkit-scrollbar-track {
+    background: #001f26;
+}
+
+#event-log::-webkit-scrollbar-thumb {
+    background: #00b3b3;
+    border-radius: 4px;
+}
+
+/* Countries Section */
+.country-info {
+    font-size: 1rem;
+    color: #e5e5be;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #004d4d;
+}
+
+.country-info:last-child {
+    border-bottom: none;
+}
+
+/* Highlighted Country */
+.country-info:hover {
+    background: rgba(0, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+/* Panic Level */
+#panic-level {
+    width: 800px;
+    margin: 10px auto;
+    font-size: 1rem;
+    color: #ff0000;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Virus Spread */
+#virus-spread {
+    width: 100%;
+    background: #8b0000;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#virus-spread span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #ff0000, #ff9900);
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #b3b3b3;
+}
+
+/* Placeholder Image Suggestions */
+#image-suggestions {
+    display: none; /* For developer reference */
+    font-size: 0.8rem;
+}
+
+/* Suggestions:
+    1. Replace 'images/map-placeholder.png' with a high-quality world map image (800x500px recommended).
+    2. Replace 'images/virus-icon-placeholder.png' with a transparent PNG of a virus icon (100x100px).
+    3. Add country-specific flags or markers for detailed interactions.
+    4. Consider animations for dynamic elements like virus spread, panic levels, and containment updates.
+*/
+
+/* End of styles.css */
